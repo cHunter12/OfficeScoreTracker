@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/scoreboard_standing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="56sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/scoreboard_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toRightOf="@id/scoreboard_standing"
+        app:layout_constraintRight_toLeftOf="@id/scoreboard_points"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Player name" />
+
+    <TextView
+        android:id="@+id/scoreboard_wins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="@id/scoreboard_standing"
+        app:layout_constraintRight_toLeftOf="@id/scoreboard_draws"
+        app:layout_constraintTop_toBottomOf="@id/scoreboard_name"
+        tools:text="W: " />
+
+    <TextView
+        android:id="@+id/scoreboard_draws"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="@id/scoreboard_wins"
+        app:layout_constraintRight_toLeftOf="@id/scoreboard_losses"
+        app:layout_constraintTop_toBottomOf="@id/scoreboard_name"
+        tools:text="D: " />
+
+    <TextView
+        android:id="@+id/scoreboard_losses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/scoreboard_draws"
+        app:layout_constraintRight_toLeftOf="@id/scoreboard_points"
+        app:layout_constraintTop_toBottomOf="@id/scoreboard_name"
+        tools:text="L: " />
+
+    <TextView
+        android:id="@+id/scoreboard_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="12" />
+
+</android.support.constraint.ConstraintLayout>
