@@ -16,4 +16,70 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <GridLayout
+        android:id="@+id/scoreboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:columnCount="6"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_name">
+
+        <TextView
+            android:id="@+id/scoreboard_standings"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:text="@string/scoreboard_standings" />
+
+        <TextView
+            android:id="@+id/scoreboard_name"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:text="@string/scoreboard_name" />
+
+        <TextView
+            android:id="@+id/scoreboard_wins"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:text="@string/scoreboard_wins" />
+
+        <TextView
+            android:id="@+id/scoreboard_losses"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:text="@string/scoreboard_losses" />
+
+        <TextView
+            android:id="@+id/scoreboard_draws"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:text="@string/scoreboard_draws" />
+
+        <TextView
+            android:id="@+id/scoreboard_points"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:text="@string/scoreboard_points" />
+
+    </GridLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_score_fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_add_24dp"/>
+
 </android.support.constraint.ConstraintLayout>
