@@ -16,11 +16,11 @@ import java.util.List;
 public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHolder> {
 
     private Context mContext;
-    private List<Standing> mStandings;
+    private List<Standing> mStandingList;
 
-    public ScoreAdapter(Context context, List<Standing> standings) {
+    public ScoreAdapter(Context context, List<Standing> standingList) {
         mContext = context;
-        mStandings = standings;
+        mStandingList = standingList;
     }
 
     @Override
@@ -33,19 +33,19 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHol
     @Override
     public void onBindViewHolder(ScoreViewHolder holder, int position) {
         Resources resources = mContext.getResources();
-        Standing standing = mStandings.get(position);
+        Standing standing = mStandingList.get(position);
 
-        holder.positionView.setText(position + 1);
+        holder.positionView.setText(String.valueOf(position + 1));
         holder.nameView.setText(standing.getName());
         holder.winsView.setText(resources.getString(R.string.scoreboard_wins, standing.getWins()));
         holder.drawsView.setText(resources.getString(R.string.scoreboard_draws, standing.getDraws()));
         holder.lossesView.setText(resources.getString(R.string.scoreboard_losses, standing.getLosses()));
-        holder.pointsView.setText(standing.getPoints());
+        holder.pointsView.setText(String.valueOf(standing.getPoints()));
     }
 
     @Override
     public int getItemCount() {
-        return mStandings.size();
+        return mStandingList.size();
     }
 
     class ScoreViewHolder extends RecyclerView.ViewHolder {

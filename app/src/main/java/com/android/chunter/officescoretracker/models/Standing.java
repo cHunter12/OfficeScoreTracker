@@ -1,6 +1,8 @@
 package com.android.chunter.officescoretracker.models;
 
-public class Standing {
+import android.support.annotation.NonNull;
+
+public class Standing implements Comparable<Standing> {
 
     private int mDraws;
     private int mLosses;
@@ -14,6 +16,11 @@ public class Standing {
         mDraws = draws;
         mLosses = losses;
         mPoints = points;
+    }
+
+    @Override
+    public int compareTo(@NonNull Standing o) {
+        return (getPoints() - o.getPoints());
     }
 
     public int getDraws() {

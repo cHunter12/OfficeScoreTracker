@@ -30,11 +30,12 @@ public class MainActivity extends AppCompatActivity implements GameAdapter.GameO
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setupGames();
+        setupPlaceholderGames();
         setupRecyclerView();
     }
 
-    private void setupGames() {
+    // TODO: Get games from online/Realm
+    private void setupPlaceholderGames() {
         mGameList.add(new Game("Rocket League", getDrawable(android.R.drawable.ic_menu_gallery)));
         mGameList.add(new Game("Fifa", getDrawable(android.R.drawable.ic_menu_gallery)));
     }
@@ -47,17 +48,5 @@ public class MainActivity extends AppCompatActivity implements GameAdapter.GameO
         RecyclerView gameRecyclerView = findViewById(R.id.games_list);
         gameRecyclerView.setLayoutManager(linearLayoutManager);
         gameRecyclerView.setAdapter(gameAdapter);
-
-//        gameRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(
-//                this, new RecyclerItemClickListener.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View view, int position) {
-//                String gameName = ((TextView) view.findViewById(R.id.game_item_name)).getText().toString();
-//
-//                Intent intent = new Intent(MainActivity.this, ScoreboardActivity.class);
-//                intent.putExtra(GAME_NAME_KEY, gameName);
-//                startActivity(intent);
-//            }
-//        }));
     }
 }
