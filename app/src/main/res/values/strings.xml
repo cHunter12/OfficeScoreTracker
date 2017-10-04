@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OfficeScoreTracker</string>
+    <string name="game_image">Game Image</string>
 </resources>
