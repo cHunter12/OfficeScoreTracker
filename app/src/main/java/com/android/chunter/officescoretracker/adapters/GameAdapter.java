@@ -2,7 +2,6 @@ package com.android.chunter.officescoretracker.adapters;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,6 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
 
     private List<Game> mGameList;
     private GameOnClickHandler mGameOnClickHandler;
-    private static final String TAG = GameAdapter.class.getSimpleName();
 
     public GameAdapter(List<Game> gameList, GameOnClickHandler gameOnClickHandler) {
         mGameList = gameList;
@@ -28,7 +26,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
 
     @Override
     public GameViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.game_list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_game, parent, false);
         return new GameViewHolder(view);
     }
 

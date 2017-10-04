@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/scoreboard_standing"
+        android:id="@+id/scoreboard_position"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textSize="22sp"
-        app:layout_constraintLeft_toRightOf="@id/scoreboard_standing"
+        app:layout_constraintLeft_toRightOf="@id/scoreboard_position"
         app:layout_constraintRight_toLeftOf="@+id/scoreboard_points"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Player name" />
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintLeft_toRightOf="@id/scoreboard_standing"
+        app:layout_constraintLeft_toRightOf="@id/scoreboard_position"
         app:layout_constraintRight_toLeftOf="@+id/scoreboard_draws"
         app:layout_constraintTop_toBottomOf="@id/scoreboard_name"
         tools:text="W: " />

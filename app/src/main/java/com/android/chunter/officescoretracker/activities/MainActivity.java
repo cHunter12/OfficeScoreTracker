@@ -5,11 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.TextView;
 
 import com.android.chunter.officescoretracker.R;
-import com.android.chunter.officescoretracker.RecyclerItemClickListener;
 import com.android.chunter.officescoretracker.adapters.GameAdapter;
 import com.android.chunter.officescoretracker.models.Game;
 

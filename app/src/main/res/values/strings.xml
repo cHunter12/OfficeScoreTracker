@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">OfficeScoreTracker</string>
     <string name="game_image">Game Image</string>
-    <string name="scoreboard_standings">Standings</string>
-    <string name="scoreboard_name">Name</string>
-    <string name="scoreboard_wins">W</string>
-    <string name="scoreboard_losses">L</string>
-    <string name="scoreboard_draws">D</string>
-    <string name="scoreboard_points">Points</string>
+
+    <string name="scoreboard_wins">W: %1$d</string>
+    <string name="scoreboard_losses">L: %1$d</string>
+    <string name="scoreboard_draws">D: %1$d</string>
 </resources>
