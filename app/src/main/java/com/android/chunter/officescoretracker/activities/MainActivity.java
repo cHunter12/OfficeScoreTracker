@@ -8,15 +8,27 @@ import android.support.v7.widget.RecyclerView;
 
 import com.android.chunter.officescoretracker.R;
 import com.android.chunter.officescoretracker.adapters.GameAdapter;
+import com.android.chunter.officescoretracker.contracts.MainContract;
 import com.android.chunter.officescoretracker.models.Game;
+import com.android.chunter.officescoretracker.presenters.MainPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements GameAdapter.GameOnClickHandler {
+public class MainActivity extends AppCompatActivity implements
+        MainContract.View,
+        GameAdapter.GameOnClickHandler {
 
+    private GameAdapter mGameAdapter;
     private List<Game> mGameList = new ArrayList<>();
+    private MainContract.Presenter mPresenter;
     public static final String GAME_NAME_KEY = "game_name";
+
+    @Override
+    public void displayGames(List<Game> gameList) {
+        mGameList.addAll(gameList);
+        mGameAdapter.notifyDataSetChanged();
+    }
 
     @Override
     public void onClick(String gameName) {
@@ -30,23 +42,19 @@ public class MainActivity extends AppCompatActivity implements GameAdapter.GameO
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setupPlaceholderGames();
         setupRecyclerView();
-    }
 
-    // TODO: Get games from online/Realm
-    private void setupPlaceholderGames() {
-        mGameList.add(new Game("Rocket League", getDrawable(android.R.drawable.ic_menu_gallery)));
-        mGameList.add(new Game("Fifa", getDrawable(android.R.drawable.ic_menu_gallery)));
+        mPresenter = new MainPresenter(this);
+        mPresenter.retrieveGames();
     }
 
     private void setupRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 
-        GameAdapter gameAdapter = new GameAdapter(mGameList, this);
+        mGameAdapter = new GameAdapter(mGameList, this);
 
         RecyclerView gameRecyclerView = findViewById(R.id.games_list);
         gameRecyclerView.setLayoutManager(linearLayoutManager);
-        gameRecyclerView.setAdapter(gameAdapter);
+        gameRecyclerView.setAdapter(mGameAdapter);
     }
 }
