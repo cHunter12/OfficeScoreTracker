@@ -13,12 +13,12 @@ import com.android.chunter.officescoretracker.models.Standing;
 
 import java.util.List;
 
-public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHolder> {
+public class StandingAdapter extends RecyclerView.Adapter<StandingAdapter.ScoreViewHolder> {
 
     private Context mContext;
     private List<Standing> mStandingList;
 
-    public ScoreAdapter(Context context, List<Standing> standingList) {
+    public StandingAdapter(Context context, List<Standing> standingList) {
         mContext = context;
         mStandingList = standingList;
     }

@@ -4,20 +4,10 @@ import android.graphics.drawable.Drawable;
 
 public class Game {
 
-    private Drawable mImage;
     private String mName;
 
-    public Game(String name, Drawable image) {
+    public Game(String name) {
         mName = name;
-        mImage = image;
-    }
-
-    public Drawable getImage() {
-        return mImage;
-    }
-
-    public void setImage(Drawable image) {
-        mImage = image;
     }
 
     public String getName() {
